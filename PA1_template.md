@@ -13,6 +13,26 @@ setwd("~/Desktop/RepData_PeerAssessment1")
 activity <- unzip("activity.zip")
 activity <- read.csv("activity.csv")
 library(dplyr)
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+```r
 library(lattice)
 ```
 
@@ -178,7 +198,7 @@ for (i in x) {
 # The following code creates a new data frame "weeks" with columns for weektype, interval, and average steps per interval
 weekend <- data.frame(per_int = weekend_per_int, weektype="weekend", interval=x)
 weekday <- data.frame(per_int = weekday_per_int, weektype="weekday", interval=x)
-weeks <- bind_rows(weekend, weekday)
+weeks <- bind_rows(weekend, weekday) # Don't worry about the warnings.
 ```
 
 ```

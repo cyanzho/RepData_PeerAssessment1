@@ -198,8 +198,16 @@ $(document).ready(function () {
 <pre class="r"><code>setwd(&quot;~/Desktop/RepData_PeerAssessment1&quot;)
 activity &lt;- unzip(&quot;activity.zip&quot;)
 activity &lt;- read.csv(&quot;activity.csv&quot;)
-library(dplyr)
-library(lattice)</code></pre>
+library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: 'dplyr'</code></pre>
+<pre><code>## The following objects are masked from 'package:stats':
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(lattice)</code></pre>
 </div>
 <div id="what-is-mean-total-number-of-steps-taken-per-day" class="section level2">
 <h2>What is mean total number of steps taken per day?</h2>
@@ -302,7 +310,7 @@ for (i in x) {
 # The following code creates a new data frame &quot;weeks&quot; with columns for weektype, interval, and average steps per interval
 weekend &lt;- data.frame(per_int = weekend_per_int, weektype=&quot;weekend&quot;, interval=x)
 weekday &lt;- data.frame(per_int = weekday_per_int, weektype=&quot;weekday&quot;, interval=x)
-weeks &lt;- bind_rows(weekend, weekday)</code></pre>
+weeks &lt;- bind_rows(weekend, weekday) # Don't worry about the warnings.</code></pre>
 <pre><code>## Warning in bind_rows_(x, .id): Unequal factor levels: coercing to character</code></pre>
 <pre><code>## Warning in bind_rows_(x, .id): binding character and factor vector,
 ## coercing into character vector
